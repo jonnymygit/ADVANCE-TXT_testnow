@@ -20,6 +20,8 @@ import yt_dlp
 from aiohttp import web
 from core import *
 from urllib.parse import urlparse, parse_qs
+from classplus_resolver import resolve_classplus_url, download_with_yt_dlp
+import os, asyncio
 from bs4 import BeautifulSoup
 from yt_dlp import YoutubeDL
 import yt_dlp as youtube_dl
