@@ -141,7 +141,10 @@ image_urls = [
     "https://graph.org/file/d0c6b9f6566a564cd7456-27fb594d26761d3dc0.jpg",
     # Add more image URLs as needed
 ]
-random_image_url = random.choice(image_urls) 
+@bot.on_message(filters.command(["start"]))
+async def start_command(bot, message):
+    random_image_url = random.choice(image_urls)   # ← FIXED HERE
+    await bot.send_photo(chat_id=message.chat.id, photo=random_image_url, caption=caption, reply_markup=keyboard) 
 # Caption for the image
 caption = (
         "**ʜᴇʟʟᴏ👋**\n\n"
